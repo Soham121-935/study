@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-[#f6f9fc] text-ink font-sans antialiased;
+}
+
+/* ---------- KaTeX ---------- */
+.katex {
+  font-size: 1.06em;
+}
+.katex-display {
+  margin: 0.9rem 0;
+  padding: 0.15rem 0;
+}
+.katex-display > .katex {
+  white-space: normal;
+}
+.tex-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 0.25rem;
+}
+
+/* ---------- Book-style content ---------- */
+.prose-book p {
+  @apply leading-7 text-[15px] text-slate-700 my-3;
+}
+.prose-book strong {
+  @apply text-navy-800 font-semibold;
+}
+.prose-book ul,
+.prose-book ol {
+  @apply my-3 pl-5 text-[15px] leading-7 text-slate-700;
+}
+.prose-book ul {
+  list-style: disc;
+}
+.prose-book ul li::marker {
+  color: #1d69aa;
+}
+.prose-book ol {
+  list-style: decimal;
+}
+.prose-book li {
+  @apply my-1;
+}
+
+/* ---------- Scrollbars ---------- */
+.nice-scroll::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.nice-scroll::-webkit-scrollbar-thumb {
+  background: #bcd8ee;
+  border-radius: 8px;
+}
+.nice-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* ---------- Exam answer paper look ---------- */
+.exam-paper {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 29px,
+    rgba(29, 105, 170, 0.12) 29px,
+    rgba(29, 105, 170, 0.12) 30px
+  );
+}
+
+@media print {
+  aside, header, nav, .no-print {
+    display: none !important;
+  }
+  main {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
